@@ -1,0 +1,58 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int total = (N*(N-1))/2;
+		HashMap<Integer,Integer> map = new HashMap<>();
+		for(int i=1;i< total;i++){
+		    int T1 = sc.nextInt();
+		    int T2 = sc.nextInt();
+		    int G1 = sc.nextInt();
+		    int G2 = sc.nextInt();
+		    //HashMap<Integer,Integer> map = new HashMap<>();
+		    if(!map.containsKey(T1)){
+		        map.put(T1,0);
+		    }
+		    else if(!map.containsKey(T2)){
+		        map.put(T2,0);
+		    }
+		    if(map.containsKey(T1)){
+		        if(G1>G2){
+		            map.put(T1,map.get(T1)+4);
+		        }
+		        else if(G1 == G2){
+		            map.put(T1,map.get(T1)+1);
+		            map.put(T2,map.get(T1)+1);
+		        }
+		    }
+		     if(map.containsKey(T2)){
+		        if(G2>G1){
+		            map.put(T2,map.get(T2)+4);
+		        }
+		        else if(G1 == G2){
+		            map.put(T1,map.get(T1)+1);
+		            map.put(T2,map.get(T1)+1);
+		        }
+		    }
+	   }
+	   int max = 0;
+	   int team = 0;
+	   for(int i:map.keySet()){
+	       if(max<map.get(i)){
+	           max = map.get(i);
+	           team = i;
+	       }
+	   }
+	   System.out.println(team);
+	
+	}
+	
+}
