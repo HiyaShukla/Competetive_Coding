@@ -25,14 +25,14 @@ class Codechef
 		        map.put(T1,map.get(T1)+1);
 		    }
 		    else{
-		        map.put(T1,0);
+		        map.put(T1,1);
 		    }
 		    
 		    if(map.containsKey(T2)){
 		        map.put(T2,map.get(T2)+1);
 		    }
 		    else{
-		        map.put(T2,0);
+		        map.put(T2,1);
 		   }
 		 }
 		   if(G1>G2){
